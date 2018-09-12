@@ -15,4 +15,11 @@ io.sockets.on('connection',newConnection);
 
 function newConnection(socket){
     console.log('new connection: ',socket.id);
+
+    socket.on('mouse',mouseMessage);
+    
+    function mouseMessage(data){
+        console.log(data);
+    }
+
 }
