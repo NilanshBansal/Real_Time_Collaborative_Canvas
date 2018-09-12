@@ -19,6 +19,9 @@ function newConnection(socket){
     socket.on('mouse',mouseMessage);
     
     function mouseMessage(data){
+        socket.broadcast.emit('mouse',data);
+        //To pass message to all clients including the sender
+        //io.sockets.emit('mouse',data);
         console.log(data);
     }
 
