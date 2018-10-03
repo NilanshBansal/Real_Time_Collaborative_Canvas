@@ -1,7 +1,11 @@
 var socket;
 
 function setup(){
-    createCanvas(600,400);
+    canvasElement = createCanvas(600,400);
+    if(canvasElement && canvasElement.canvas && canvasElement.canvas.style){
+        canvasElement.canvas.style.cursor = "pointer";
+    }
+    
     background(51);
     socket = io.connect(window.location.hostname)
 
